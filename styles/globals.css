@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+body {
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: #bf7a6b;
+  background-image: -webkit-linear-gradient(
+    bottom left,
+    #bf7a6b 0%,
+    #e6d8a7 100%
+  );
+  background-image: linear-gradient(to top right, #bf7a6b 0%, #e6d8a7 100%);
+}
+
+.form {
+  width: 400px;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+.file-upload-wrapper:after {
+  content: attr(data-text);
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 10px 15px;
+  display: block;
+  width: calc(100% - 40px);
+  pointer-events: none;
+  z-index: 20;
+  height: 40px;
+  line-height: 40px;
+  color: #999;
+  border-radius: 5px 10px 10px 5px;
+  font-weight: 300;
+}
+.file-upload-wrapper:before {
+  content: "Upload";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  height: 60px;
+  background: #4daf7c;
+  color: #fff;
+  font-weight: 700;
+  z-index: 25;
+  font-size: 16px;
+  line-height: 60px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  pointer-events: none;
+  border-radius: 0 5px 5px 0;
+}
+.file-upload-wrapper:hover:before {
+  background: #3d8c63;
+}
+.file-upload-wrapper input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #505be4;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #505be4, 0 0 5px #505be4;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #505be4;
+  border-left-color: #505be4;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  width: 40%;
+  margin: 40px auto;
+}
+
+div.gallery {
+  margin-top: 30px;
+}
+
+div.gallery ul {
+  list-style-type: none;
+  margin-left: 35px;
+}
+
+/* animation */
+div.gallery ul li,
+div.gallery li img {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+div.gallery ul li {
+  position: relative;
+  float: left;
+  width: 130px;
+  margin: 5px;
+  padding: 5px;
+  z-index: 0;
+  border: 3px solid #efefef;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.btn-primary {
+  margin: 10px 0;
+  font-weight: 500;
+  background-color: #505be4;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+/* Image is position nicely under li */
+.custom-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #dddddd;
+  padding: 5px;
+  width: 130px;
+  height: 130px;
+  background: #f0f0f0;
+  transition: all ease 0.9s;
+  cursor: pointer;
+}
+.snackbar {
+  min-width: 300px;
+
+  color: #fff;
+  padding: 10px 30px;
+  position: fixed;
+  margin-left: -125px;
+  left: 50%;
+  bottom: 0;
+  font-size: 18px;
+  border-radius: 4px;
+  visibility: hidden;
+  transition: all ease-in 0.6s;
+}
+.message-success {
+  background-color: #4daf7c;
+}
+.message-error {
+  background-color: #c34e45;
+}
+
+.snackbar.show {
+  visibility: visible;
+  bottom: 30px;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  cursor: pointer;
+}
+.delete-icon {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  cursor: pointer;
+  color: #000;
+  background-color: #3d8c63;
+}
+
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-body {
+  margin: 30px 0;
+  border-top: 1px solid #e0e0e0;
+}
+.modal-body p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 20rem;
+  border-radius: 0.5rem;
+}
+
+.modal-footer {
+  text-align: center;
+}
+.close-button {
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.confirm-btn {
+  padding: 10px 27px;
+  font-size: 13px;
+}
+
+.btn-primary:disabled,
+.btn-primary[disabled] {
+  background-color: #505be499;
+}
+.no-data {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+}
+.mr-5 {
+  margin-right: 15px;
+}
